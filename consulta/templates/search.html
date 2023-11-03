@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisar</title>
+    {% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+</head>
+<body>
+<br><br>
+<div class="container-fluid">
+<form class="mb-3" method="GET" action="" >
+    <input class="mb-3" type="search" name="search">
+    <button class="mb-3" type="submit"> Search </button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ISBN</th>
+      <th scope="col">Título</th>
+      <th scope="col">COD INT</th>
+      <th scope="col">Estoque Total</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>{{ result.0.isbn1 }}</td>
+      <td>{{ result.0.title }}</td>
+      <td>{{ result.0.nbook }}</td>
+      <td>{{ result.1 }}</td>
+  </tr>
+  </tbody>
+</table>
+    </div>
+</body>
+</html>
