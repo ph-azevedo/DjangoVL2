@@ -2,14 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Upload Planilha</title>
+        {% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 </head>
 <body>
-    <h3>Teste</h3>
-    <p>{{ result }}</p>
-    <p>{{ result }}</p>
-    <p>{{ query.autor}}</p>
-    <p>{{ stock }}</p>
+<div class="mb-3"">
+<h2>Faça o upload da planilha:</h2><p>
+<br>
+<form class='mb-3' action="{% url "index" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class='form-label'
+                   type="file"
+                   title="Upload excel file"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   class='form-label'
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
 
+        <p></p>
+        <hr>
+
+</div>
 </body>
 </html>
